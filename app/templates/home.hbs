@@ -1,0 +1,18 @@
+<div>
+  <div></div>
+  <h2>About GitHub Search</h2>
+  <p>
+    Search for any repo on GitHub, as long as GitHub's API is up and running :)
+  </p>
+  {{#each model as |repo|}}
+  <article class="listing">
+    <h3>{{repo.name}}</h3>
+    <div class="detail owner">
+      <span>Owner:</span> {{repo.owner.login}}
+    </div>
+    <div class="detail type">
+      <span>Description:</span> {{repo.description}}
+    </div>
+  </article>
+{{/each}}
+</div>
