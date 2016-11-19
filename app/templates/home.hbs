@@ -4,15 +4,13 @@
   <p>
     Search for any repo on GitHub, as long as GitHub's API is up and running :)
   </p>
-  {{#each model as |repo|}}
-  <article class="listing">
-    <h3>{{repo.name}}</h3>
-    <div class="detail owner">
-      <span>Owner:</span> {{repo.owner.login}}
-    </div>
-    <div class="detail type">
-      <span>Description:</span> {{repo.description}}
-    </div>
-  </article>
-{{/each}}
+
+  {{#ui-search source=keywords onSearchQuery=(action (mut query)) onSelect=(action (mut selected))}}
+  	<input class="prompt" type="text" placeholder="Keywords...">
+  	<div class="results"></div>
+	{{/ui-search}}
+
+  {{#each model as |repoItem|}}
+    {{repo-listing repo=repoItem}}
+  {{/each}}
 </div>

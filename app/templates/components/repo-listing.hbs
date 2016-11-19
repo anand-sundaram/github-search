@@ -1,0 +1,17 @@
+<article class="listing">
+	<a {{action 'toggleDetail'}}>
+		<div class="ui card">
+			<div class="content">
+				<h3>{{repo.name}}</h3>
+				<div class="detail owner">
+				  <span>Owner:</span> {{repo.owner.login}}
+				</div>
+				{{#if toggleVisibility}}
+					<div class="detail description">
+					  <span>Description:</span> {{repo.description}}
+					</div>
+				{{/if}}
+			</div>
+		</div>
+	</a>
+</article>
