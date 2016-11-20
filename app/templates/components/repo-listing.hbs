@@ -1,26 +1,21 @@
-<article class="listing">
-	<a {{action 'toggleDetail'}}>
-		<div class="ui card">
-			<div class="content">
-				<h3>{{repo.name}}</h3>
-				<div class="detail owner">
-				  <span>Owner:</span> {{repo.owner.login}}
-				</div>
-				{{#if toggleVisibility}}
-					<div class="detail descriptions">
-					  <span>Description:</span> {{if repo.description repo.description "None"}}
-					</div>
-					<div class="detail language">
-					  <span>Language:</span> {{if repo.language repo.language "None"}}
-					</div>
-					<div class="detail url">
-					  <span>URL:</span> {{repo.html_url}}
-					</div>
-					<div class="detail followers">
-					  <span>Followers:</span> {{repo.watchers}}
-					</div>
-				{{/if}}
-			</div>
+
+	<div class="content" {{action 'toggleDetail'}}>
+		<h3>{{repo.name}}</h3>
+		<div class="detail owner">
+		  <span>Owner:</span> {{repo.owner.login}}
 		</div>
-	</a>
-</article>
+		{{#if toggleVisibility}}
+			<div class="detail descriptions">
+			  <span>Description:</span> {{if repo.description repo.description "None"}}
+			</div>
+			<div class="detail language">
+			  <span>Language:</span> {{if repo.language repo.language "None"}}
+			</div>
+			<div class="detail url">
+			  <span>URL:</span> {{repo.html_url}}
+			</div>
+			<div class="detail followers">
+			  <span>Followers:</span> {{repo.watchers}}
+			</div>
+		{{/if}}
+	</div>

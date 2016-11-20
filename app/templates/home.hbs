@@ -6,8 +6,10 @@
   </p>
 
   {{#repo-search search=(action 'searchGitHub') as |repos|}}
-    {{#each repos as |repoItem|}}
-      {{repo-listing repo=repoItem}}
-    {{/each}}
+    <div class="ui cards results">
+      {{#each repos as |repoItem|}}
+        {{repo-listing class="card" repo=repoItem}}
+      {{/each}}
+    </div>
   {{/repo-search}}
 </div>

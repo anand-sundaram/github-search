@@ -1,5 +1,12 @@
-<div class="ui icon input">
-	{{input class="prompt" value=value placeholder="Keywords..." enter="searchForRepos"}}
-	<i class="search icon"></i>
+<div class="ui grid">
+	<div class="row">
+		<div class="ui icon input">
+			{{input class="prompt" value=value placeholder="Keywords..." enter="searchForRepos"}}
+			<i class="search icon"></i>
+		</div>
+	</div>
+
+	<div class="row">
+		{{yield results}}
+	</div>
 </div>
-{{yield results}}
