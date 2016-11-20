@@ -4,8 +4,7 @@ export default Ember.Component.extend({
 	toggleVisibility: false,
 	actions: {
 	    toggleDetail() {
-	      // this.set('isVisible', false);
-	      this.toggleProperty('toggleVisibility');
+			this.toggleProperty('toggleVisibility');
 	    }
 	}
 });
