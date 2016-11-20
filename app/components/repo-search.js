@@ -1,12 +1,25 @@
 import Ember from 'ember';
 
+function showSpinner() {
+	$('.dimmer').addClass('active');
+}
+
+function hideSpinner() {
+	$('.dimmer').removeClass('active');
+}
+
 export default Ember.Component.extend({
 	actions: {
 		searchForRepos(){
 			let searchValue = this.get('value');
 			let searchAction = this.get('search');
 
-			searchAction(searchValue).then((searchResults) => this.set('results', searchResults));
+			showSpinner();
+
+			searchAction(searchValue).then((searchResults) => {
+				hideSpinner();
+				this.set('results', searchResults);
+			});
 		}
 	}
 });
