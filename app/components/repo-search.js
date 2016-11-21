@@ -8,6 +8,14 @@ function hideSpinner() {
 	$('.dimmer').removeClass('active');
 }
 
+function displayEmptyMessage() {
+	$('.empty').show();
+}
+
+function hideEmptyMessage() {
+	$('.empty').hide();
+}
+
 export default Ember.Component.extend({
 	actions: {
 		searchForRepos(){
@@ -18,7 +26,17 @@ export default Ember.Component.extend({
 
 			searchAction(searchValue).then((searchResults) => {
 				hideSpinner();
-				this.set('results', searchResults);
+				if (searchResults.length == 0) {
+					this.set('results', []);
+					displayEmptyMessage();
+				} else {
+					hideEmptyMessage();
+					this.set('results', searchResults);
+				}
+			}, (error) => {
+				hideSpinner();
+				this.set('results', []);
+				displayEmptyMessage();
 			});
 		}
 	}

@@ -10,6 +10,7 @@
       {{#each repos as |repoItem|}}
         {{repo-listing class="card" repo=repoItem}}
       {{/each}}
+      <p class="empty" style="display: none">Sorry, your keywords did not match any repos on GitHub</p>
     </div>
     <div class="ui inverted dimmer">
       <div class="ui text loader">Loading</div>
