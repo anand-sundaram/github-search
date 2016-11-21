@@ -6,7 +6,7 @@
   </p>
 
   {{#repo-search search=(action 'searchGitHub') as |repos|}}
-    <div class="ui cards results">
+    <div class="ui cards results" style="word-wrap: break-word;">
       {{#each repos as |repoItem|}}
         {{repo-listing class="card" repo=repoItem}}
       {{/each}}
