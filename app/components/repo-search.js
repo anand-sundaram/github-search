@@ -27,7 +27,7 @@ export default Ember.Component.extend({
 			Ember.run(this, function(){
 				searchAction(searchValue).then((searchResults) => {
 					hideSpinner();
-					if (searchResults.items.length == 0) {
+					if (searchResults.items.length === 0) {
 						this.set('results', []);
 						displayEmptyMessage();
 					} else {
@@ -36,7 +36,7 @@ export default Ember.Component.extend({
 							this.set('results', searchResults.items);
 						});
 					}
-				}, (error) => {
+				}, () => {
 					hideSpinner();
 					this.set('results', []);
 					displayEmptyMessage();

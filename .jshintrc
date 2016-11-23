@@ -30,3 +30,8 @@
   "esversion": 6,
   "unused": true
 }
+{
+    "globals": {
+        "$": false
+    }
+}
