@@ -24,19 +24,23 @@ export default Ember.Component.extend({
 
 			showSpinner();
 
-			searchAction(searchValue).then((searchResults) => {
-				hideSpinner();
-				if (searchResults.length == 0) {
+			Ember.run(this, function(){
+				searchAction(searchValue).then((searchResults) => {
+					hideSpinner();
+					if (searchResults.items.length == 0) {
+						this.set('results', []);
+						displayEmptyMessage();
+					} else {
+						hideEmptyMessage();
+						Ember.run(this, function(){
+							this.set('results', searchResults.items);
+						});
+					}
+				}, (error) => {
+					hideSpinner();
 					this.set('results', []);
 					displayEmptyMessage();
-				} else {
-					hideEmptyMessage();
-					this.set('results', searchResults);
-				}
-			}, (error) => {
-				hideSpinner();
-				this.set('results', []);
-				displayEmptyMessage();
+				});
 			});
 		}
 	}
