@@ -2,7 +2,7 @@
 
 GitHub Search is an application which allows you to search for repos on GitHub by keyword. It is a simple single-page application which uses [EmberJS](http://emberjs.com/) and [Semantic-UI](http://semantic-ui.com/). This project is my attempt at learning EmberJS, possibly at the cost of over-engineering. 
 
-You can try it out at: http://necessary-growth.surge.sh/ (the subdomain name was random, and not under my control, but kind of reflects what I experienced over the course of this assignment).
+You can try it out at: https://necessary-growth.surge.sh/ (the subdomain name was random, and not under my control, but kind of reflects what I experienced over the course of this assignment).
 
 ## Prerequisites
 
