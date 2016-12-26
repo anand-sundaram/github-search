@@ -28,7 +28,9 @@ export default Ember.Component.extend({
 				searchAction(searchValue).then((searchResults) => {
 					hideSpinner();
 					if (searchResults.items.length === 0) {
-						this.set('results', []);
+						Ember.run(this, function(){
+							this.set('results', []);
+						});
 						displayEmptyMessage();
 					} else {
 						hideEmptyMessage();
@@ -38,7 +40,9 @@ export default Ember.Component.extend({
 					}
 				}, () => {
 					hideSpinner();
-					this.set('results', []);
+					Ember.run(this, function(){
+						this.set('results', []);
+					});
 					displayEmptyMessage();
 				});
 			});
